@@ -12,8 +12,8 @@ public class CommissionEmployee extends Employee{
         this.commission = commission;
     }
     public CommissionEmployee(){
-        this.grossSales = 0;
-        this.commission = 0;
+//        this.grossSales = 0;
+//        this.commission = 0;
     }
     public CommissionEmployee(float grossSales, int commission) {
         this.grossSales = grossSales;

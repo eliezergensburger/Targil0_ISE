@@ -13,8 +13,8 @@ public class HourlyEmployee  extends Employee{
     }
 
     public HourlyEmployee(){
-        this.hours=0;
-        this.wage=0;
+//        this.hours=0;
+//        this.wage=0;
     }
     public HourlyEmployee(int hours, float wage) {
         this.hours = hours;
