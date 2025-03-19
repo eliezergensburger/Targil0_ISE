@@ -99,12 +99,14 @@ public abstract class Employee {
      * @param o the object to compare this `Employee` against
      * @return true if the given object represents an `Employee` equivalent to this employee, false otherwise
      */
-    @Override
+
+     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Employee employee = (Employee) o;
-        return id == employee.id && firstName.equals(employee.firstName) && lastName.equals(employee.lastName);
+        if (!(o instanceof Employee employee)) return false;
+
+        return id == employee.id
+                    && firstName.equals(employee.firstName)
+                    && lastName.equals(employee.lastName);
     }
 
     /**
@@ -115,7 +117,10 @@ public abstract class Employee {
      */
     @Override
     public int hashCode() {
-        return Objects.hash(firstName, lastName, id);
+        int result = firstName.hashCode();
+        result = 31 * result + lastName.hashCode();
+        result = 31 * result + id;
+        return result;
     }
 
     /**

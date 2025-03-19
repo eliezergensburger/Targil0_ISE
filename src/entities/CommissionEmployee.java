@@ -89,12 +89,11 @@ public class CommissionEmployee extends Employee {
      * @return true if the given object represents a `CommissionEmployee` equivalent to this employee, false otherwise
      */
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+    public final boolean equals(Object o) {
+        if (!(o instanceof CommissionEmployee that)) return false;
         if (!super.equals(o)) return false;
-        CommissionEmployee that = (CommissionEmployee) o;
-        return Float.compare(that.grossSales, grossSales) == 0 && commission == that.commission;
+
+        return Float.compare(grossSales, that.grossSales) == 0 && commission == that.commission;
     }
 
     /**

@@ -89,12 +89,11 @@ public class HourlyEmployee extends Employee {
      * @return true if the given object represents an `HourlyEmployee` equivalent to this employee, false otherwise
      */
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+    public final boolean equals(Object o) {
+        if (!(o instanceof HourlyEmployee that)) return false;
         if (!super.equals(o)) return false;
-        HourlyEmployee that = (HourlyEmployee) o;
-        return hours == that.hours && Float.compare(that.wage, wage) == 0;
+
+        return hours == that.hours && Float.compare(wage, that.wage) == 0;
     }
 
     /**
